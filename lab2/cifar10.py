@@ -26,6 +26,10 @@ def load_batch(filepath):
         # transform the X vector such that each element from the vector is 32x32 color image
         # 0. first reshape the vector to (num_images, 3, 32, 32)
         # then transpose it, such that the images are stored in (rows, cols, channels) order
+
+        X = X.reshape(X.shape[0], 3, 32, 32)
+        X = np.transpose(X, axes=[0, 2, 3, 1])
+
         # end TODO your code here
         return X, np.asarray(y)
 
